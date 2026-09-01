@@ -1,0 +1,9 @@
+{
+  // Workspace settings win over the machine settings the devcontainer writes,
+  // so the server URL is pinned here as the authoritative copy.
+  "student-extension.serverUrl": "https://humanaifeedback.com",
+  "github.copilot.enable": { "*": false },
+  "editor.inlineSuggest.enabled": false,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000
+}
