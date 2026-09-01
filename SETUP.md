@@ -76,7 +76,18 @@ Per problem:
 Counterbalance which system pairs with which problem if you run more than one
 session.
 
-## 5. Known gaps
+## 5. AI assistants are disabled
+
+`chat.disableAIFeatures: true` (in both `.vscode/settings.json` and the
+devcontainer) hides Copilot chat, disables inline suggestions, and disables the
+Copilot extensions themselves. Older per-extension settings are kept alongside it
+for VS Code builds that predate it, and `settingsSync.ignoredExtensions` stops a
+participant's own synced profile from pulling Copilot back in.
+
+Verify in a real Codespace before recruiting: no chat icon in the title bar, no
+ghost-text completions while typing in `problem_a.py`.
+
+## 6. Known gaps
 
 - **Student ids are random.** The extension generates `student-a1b2c3d4` with no
   way to set a name, so the Live Students panel cannot be mapped to people.

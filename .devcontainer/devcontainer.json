@@ -9,20 +9,27 @@
       // installed by postCreateCommand below instead.
       "extensions": [
         "AshleyZhang.student-extension",
-        "ms-python.python"
+        "ms-python.python",
+        "ms-python.debugpy"
       ],
       "settings": {
         "student-extension.serverUrl": "https://humanaifeedback.com",
         "student-extension.pythonPath": "/usr/local/bin/python3",
+        "python.defaultInterpreterPath": "/usr/local/bin/python3",
 
         // Keep the environment identical for every participant, and make sure no
         // OTHER AI assistant is available — the study measures help from this
-        // extension only.
+        // extension only. chat.disableAIFeatures hides chat, disables inline
+        // suggestions, and disables the Copilot extensions outright; the rest
+        // cover older VS Code builds.
+        "chat.disableAIFeatures": true,
         "github.copilot.enable": { "*": false },
         "github.copilot.inlineSuggest.enable": false,
         "chat.commandCenter.enabled": false,
-        "workbench.startupEditor": "none",
         "editor.inlineSuggest.enabled": false,
+        // Don't let a participant's synced profile pull Copilot back in.
+        "settingsSync.ignoredExtensions": ["GitHub.copilot", "GitHub.copilot-chat"],
+        "workbench.startupEditor": "none",
         "editor.suggest.showWords": false,
         "git.openRepositoryInParentFolders": "never",
         "telemetry.telemetryLevel": "off"

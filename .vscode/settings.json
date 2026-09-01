@@ -1,9 +1,24 @@
 {
   // Workspace settings win over the machine settings the devcontainer writes,
-  // so the server URL is pinned here as the authoritative copy.
+  // so anything that must hold for every participant belongs here.
+
   "student-extension.serverUrl": "https://humanaifeedback.com",
+
+  // Turn off every built-in AI assistant. The study measures help from the
+  // student extension only, so Copilot chat / inline suggestions would be an
+  // uncontrolled second channel. This one setting hides chat, disables inline
+  // suggestions, AND disables the Copilot extensions themselves.
+  "chat.disableAIFeatures": true,
+  // Belt and braces for older VS Code builds that predate the setting above.
   "github.copilot.enable": { "*": false },
+  "github.copilot.inlineSuggest.enable": false,
+  "chat.commandCenter.enabled": false,
   "editor.inlineSuggest.enabled": false,
+
+  // Pre-select the interpreter so nobody gets the "Select Python Interpreter"
+  // prompt mid-task.
+  "python.defaultInterpreterPath": "/usr/local/bin/python3",
+
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000
 }
